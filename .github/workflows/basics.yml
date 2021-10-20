@@ -43,3 +43,8 @@ jobs:
           
           - name: Printing Deplyoment Package
             run : echo "Deployment Package name is ${{ env.PACKAGE_NAME }}"
+          
+          - name: Lets check some packages if they are present
+            run : | 
+                aws --version
+                zip --version
