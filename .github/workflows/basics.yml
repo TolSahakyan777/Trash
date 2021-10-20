@@ -1,8 +1,8 @@
 # GitHub Action Part-1 - Basics
 name: My-Basics
 env:
-  APP_NAME: "MyVAR"
-  PACKAGE_NAME: "flask-deploy-ver= ${{ github.sha }}"
+  APP_NAME: "MY APP"
+  PACKAGE_NAME: "flask-deploy-ver -${{ github.sha }}"
 
 
 on:
@@ -17,6 +17,8 @@ jobs:
         steps:
           -  name : Print Hello Message
              run : echo "Hello World"
+          -  name : List Current Folder
+             run  : ls -la
              
           -  name : Execute few commands
              run  : |
