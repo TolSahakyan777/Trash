@@ -36,8 +36,19 @@ jobs:
     myDeploy:
         runs-on: ubuntu-latest
         needs: [myTest]
+        env:
+          VAR1: "THIS IS JOB LEVEL VARIABLE 1" 
+          VAR2: "THIS IS JOB LEVEL VARIABLE 2"
         
         steps:
+          - name: Print Job Level Env Variables
+            run : |
+              echo "VAR1 = ${{ env.VAR1 }}"
+              echo "VAR2 = ${{ env.VAR2 }}"
+              echo "SUPER LOCAL VAR = $SUPER_LOCAL_VAR"
+            env:
+              SUPER_LOCAL_VAR: "VARIABLE INSIDE JOB --> INSIDE STEP"
+            
           - name: Print Hello Message
             run : echo "Hello World!!"
           
