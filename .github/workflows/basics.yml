@@ -1,5 +1,9 @@
 # GitHub Action Part-1 - Basics
 name: My-Basics
+env:
+  APP_NAME: "MyVAR"
+  PACKAGE_NAME: "flask-deploy-ver= ${{ github.sha }}"
+
 
 on:
   push:
@@ -13,7 +17,13 @@ jobs:
         steps:
           -  name : Print Hello Message
              run : echo "Hello World"
-    
+             
+          -  name : Execute few commands
+             run  : |
+                echo "HELLO 1"
+                echo "HELLO 2"
+                echo "APLLICATION NAME - ${{ env.APP_NAME}}"
+        
     myDeploy:
         runs-on: ubuntu-latest
         needs: [myTest]
@@ -21,3 +31,6 @@ jobs:
         steps:
           - name: Print Hello Message
             run : echo "Hello World!!"
+          
+          - name: Printing Deplyoment Package
+            run : echo "Deployment Package name is ${{ env.PACKAGE_NAME }}"
