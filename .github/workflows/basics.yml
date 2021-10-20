@@ -1,0 +1,22 @@
+# GitHub Action Part-1 - Basics
+name: My-Basics
+
+on:
+  push:
+      branches: 
+          - main
+          
+jobs:
+    myTest:
+        runs-on: ubuntu-latest
+
+        steps:
+          -  name : Print Hello Message
+          -   run : echo "Hello World"
+    
+    myDeploy:
+        runs-on: ubuntu-latest
+        
+        steps:
+          - name: Print Hello Message
+          -  run : echo "Hello World!!"
