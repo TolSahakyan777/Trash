@@ -17,7 +17,14 @@ jobs:
         steps:
           -  name : Print Hello Message
              run : echo "Hello World"
+             
           -  name : List Current Folder
+             run  : ls -la
+             
+          -  name : Git clone my Repo
+             run  : actions/checkout@v1
+             
+          -  name : List Current Folder 2.0
              run  : ls -la
              
           -  name : Execute few commands
