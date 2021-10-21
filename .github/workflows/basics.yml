@@ -3,7 +3,7 @@ name: My-Basics
 env:
   APP_NAME: "MY APP"
   PACKAGE_NAME: "flask-deploy-ver -${{ github.sha }}"
-
+  H_COCK: "26cm"
 
 on:
   push:
@@ -48,7 +48,13 @@ jobs:
               echo "SUPER LOCAL VAR = $SUPER_LOCAL_VAR"
             env:
               SUPER_LOCAL_VAR: "VARIABLE INSIDE JOB --> INSIDE STEP"
-            
+          - name: Print Hello Harut
+            run : |
+               echo "HARUT NIGGA!!!"
+               echo "HARUT'S COCK is  ${{ env.H_COCK }}"
+          
+          
+          
           - name: Print Hello Message
             run : echo "Hello World!!"
           
